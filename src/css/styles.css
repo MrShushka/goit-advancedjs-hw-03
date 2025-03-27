@@ -11,7 +11,7 @@ header {
   padding: 20px;
 }
 
-#search-form {
+.form {
   display: flex;
   justify-content: center;
   gap: 10px;
@@ -61,16 +61,16 @@ button:hover {
   transition: transform 0.3s ease-in-out;
 }
 
+.gallery .info{
+
+}
 .gallery-image:hover {
   transform: scale(1.05);
 }
 
 
-.hidden {
-  display: none;
-}
-
-
 .loader {
-  display: inline;
+  display: none;
+  text-align: center;
 }
+
