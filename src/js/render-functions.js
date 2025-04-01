@@ -1,6 +1,6 @@
-export function renderGallery(images) {
-  const gallery = document.querySelector('.gallery');
+const gallery = document.querySelector('.gallery');
 
+export function renderGallery(images) {
   if (images.length === 0) {
     iziToast.warning({
       title: 'Warning',
@@ -30,6 +30,5 @@ export function renderGallery(images) {
 }
 
 export function clearGallery() {
-  console.log(document.querySelector('.gallery'));
-  document.querySelector('.gallery').innerHTML = '';
+  gallery.innerHTML = '';
 }
