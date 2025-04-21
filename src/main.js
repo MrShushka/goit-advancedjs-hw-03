@@ -11,6 +11,14 @@ const loader = document.querySelector('.loader');
 
 let lightbox = new SimpleLightbox('.gallery a');
 
+function showLoader() {
+  loader.style.display = 'block';
+}
+
+function hideLoader() {
+  loader.style.display = 'none';
+}
+
 form.addEventListener('submit', event => {
   event.preventDefault();
   console.log(event.target.elements);
@@ -21,7 +29,7 @@ form.addEventListener('submit', event => {
   }
 
   clearGallery();
-  loader.style.display = 'block';
+  showLoader();
   fetchImages(query)
     .then(images => {
       renderGallery(images);
@@ -31,6 +39,6 @@ form.addEventListener('submit', event => {
       iziToast.error({ title: 'Error', message: error.message });
     })
     .finally(() => {
-      loader.style.display = 'none';
+      hideLoader();
     });
 });
